@@ -6,6 +6,6 @@ var calories=Number(array[i+1]);
 list[product]=calories;
 }
 console.log(list);
-return list;
+//return list;
 }
 solve(['Yoghurt', '48', 'Rise', '138', 'Apple', '52']);
