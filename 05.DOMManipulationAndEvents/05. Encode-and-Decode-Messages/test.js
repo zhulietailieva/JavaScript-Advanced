@@ -3,9 +3,10 @@ function solve(message){
         let symbols=Array.from(message);
         let res='';
         for (const symbol of symbols) {
-            let currentSymbol=String.charCodeAt
-            console.log(currentSymbol);
+            let currentSymbol=Number(symbol.charCodeAt(0));
+            let newChar=String.fromCharCode(currentSymbol+1);
+            res+=newChar;
         }
-    
+        return res;   
 }
-solve("a");
+console.log(solve("ab"));
