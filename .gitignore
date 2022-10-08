@@ -88,3 +88,7 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+.DS_Store
+node_modules/
+npm-debug.log
