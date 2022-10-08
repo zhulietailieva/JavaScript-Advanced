@@ -1,5 +1,5 @@
 let {  assert } = require('chai');
-const {isOddOrEven}=require('./isOddOrEven');
+const {isOddOrEven}=require('../02.IsOddOrEven');
 
 describe('even and odd',()=>{
     it('should return odd numbers correctly',()=>{
