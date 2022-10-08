@@ -277,4 +277,4 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-JavaScript-Advanced/07.UnitTestingAndErrorHandling/node_modules
+JavaScript-Advanced/07.UnitTestingAndErrorHandling/node_modules/.bin
