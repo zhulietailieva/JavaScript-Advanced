@@ -31,7 +31,7 @@ class Company{
         let highestAverageSalary=-1;
         console.log(this.departments.entries());
         for (const item of this.departments.entries()) {
-            console.log("----"+item.keys());
+            
             let currValues=item.values();
            // console.log(currValues);
             let sum=0;
