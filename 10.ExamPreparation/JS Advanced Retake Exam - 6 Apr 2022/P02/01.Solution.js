@@ -1,11 +1,3 @@
-// class Plant{
-//     constructor(plantName,spaceRequired){
-//         this.plantName=plantName;
-//         this.spaceRequired=spaceRequired;
-//         this.ripe=false;
-//         this.quantity=0;
-//     }
-// }
 class Garden{
     
     constructor(spaceAvailable){
