@@ -21,20 +21,42 @@ describe("Tests …", ()=> {
      });
 
      describe("isItAffordable", function() {
-
         it("should throw exception with arguments that are not numbers", function() {
             assert.throws(()=>bookSelection.isItAffordable(null,"test"),"Invalid input");
             assert.throws(()=>bookSelection.isItAffordable(5,"test"),"Invalid input");
             assert.throws(()=>bookSelection.isItAffordable(undefined,5),"Invalid input");
         });
+        it("should should work correctly with result below 0", function() {
+           assert.equal(bookSelection.isItAffordable(1,0),"You don't have enough money");
+        });
+        it("should should work correctly with a positive result", function() {
+            assert.equal(bookSelection.isItAffordable(1,2),"Book bought. You have 1$ left");
+         });
      });
 
      describe("suitableTitles ", function() {
-
-        it("TODO …", function() {
-
+        it("ivalid input should throw an error", function() {
+            assert.throws(()=>bookSelection.suitableTitles(1,"test"), "Invalid input");
+            assert.throws(()=>bookSelection.suitableTitles(Array,5),"Invalid input");
+            assert.throws(()=>bookSelection.suitableTitles(6,5),"Invalid input");
         });
-     });
-
-     
+        it("should work correctly with correct parameters", function() {
+            let book1={
+                title:"Book1",
+                genre:"Horror"
+            };
+            let book2={
+                title:"Book2",
+                genre:"Horror"
+            };
+            let book3={
+                title:"Book3",
+                genre:"Comedy"
+            };
+            let books=[book1,book2,book3];
+           let res=bookSelection.suitableTitles(books,"Horror");
+           expect(res).to.deep.equal([ 'Book1', 'Book2' ]);
+          // assert.equal(res, [ 'Book1', 'Book2' ]);
+        });
+     });  
 });
