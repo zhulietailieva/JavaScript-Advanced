@@ -1,11 +1,11 @@
-class Plant{
-    constructor(plantName,spaceRequired){
-        this.plantName=plantName;
-        this.spaceRequired=spaceRequired;
-        this.ripe=false;
-        this.quantity=0;
-    }
-}
+// class Plant{
+//     constructor(plantName,spaceRequired){
+//         this.plantName=plantName;
+//         this.spaceRequired=spaceRequired;
+//         this.ripe=false;
+//         this.quantity=0;
+//     }
+// }
 class Garden{
     
     constructor(spaceAvailable){
@@ -18,15 +18,22 @@ class Garden{
         if(this.spaceAvailable-spaceRequired<0){
             throw new Error("Not enough space in the garden.");
         }
-        let plant=new Plant(plantName,spaceRequired);
+        let plant={
+            plantName:plantName,
+            spaceRequired:spaceRequired,
+            ripe:false,
+            quantity:0
+        };
+        //let plant=new Plant(plantName,spaceRequired);
         this.spaceAvailable-=spaceRequired;
         this.plants.push(plant);
         return `The ${plantName} has been successfully planted in the garden.`;
     }
     ripenPlant(plantName,quantity){
         quantity=Number(quantity);
-        if(!this.plants.some(x=>x.plantName==plantName)){
+        if(!this.plants.some(x=>(x.plantName)==plantName)){
             //no plants with that name
+            console.log(this.plants);
             throw new Error(`There is no ${plantName} in the garden.`);
         }
         if(this.plants.find(x=>x.plantName==plantName).ripe){
@@ -42,7 +49,7 @@ class Garden{
             return `${quantity} ${plantName} has successfully ripened.`;
         }
         else{
-            return `${quantity} ${plantName}s has successfully ripened.`;
+            return `${quantity} ${plantName}s have successfully ripened.`;
         }
     }
     harvestPlant(plantName){
@@ -76,8 +83,9 @@ class Garden{
 }
 const myGarden = new Garden(250)
 console.log(myGarden.addPlant('apple', 20));
-console.log(myGarden.addPlant('orange', 100));
-console.log(myGarden.addPlant('cucumber', 30));
+console.log(myGarden.addPlant('orange', 200));
+console.log(myGarden.addPlant('raspberry', 10));
 console.log(myGarden.ripenPlant('apple', 10));
 console.log(myGarden.ripenPlant('orange', 1));
-console.log(myGarden.ripenPlant('orange', 4));
+console.log(myGarden.harvestPlant('orange'));
+console.log(myGarden.generateReport());
