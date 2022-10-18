@@ -1,0 +1,18 @@
+{
+  "name": "p03",
+  "version": "1.0.0",
+  "description": "",
+  "main": "03. Car Service_Resources.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0"
+  }
+}
