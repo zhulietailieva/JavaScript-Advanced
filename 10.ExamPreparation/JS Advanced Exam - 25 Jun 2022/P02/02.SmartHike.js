@@ -72,7 +72,7 @@ class SmartHike{
             for (const hike of this.listOfHikes) {
                 res+=`${this.username} hiked ${hike.peak} for ${hike.time} hours\n`;
             }
-            return res;
+            return res.trim();
         }
     }
 }
