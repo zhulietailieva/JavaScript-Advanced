@@ -60,7 +60,6 @@ function solve() {
 
         tr.appendChild(btnElementsTd);
         tbody.appendChild(tr);
-        document.getElementsByTagName('table')[0].appendChild(tbody); 
          //salary
         sum+=Number(salaryEl.value);
         let sumSpanEl=document.getElementById('sum');
@@ -69,7 +68,6 @@ function solve() {
         for (const element of DOMelements) {
             element.value='';
         }
-       console.log(document.getElementsByTagName('table')[0]);
     }
 
     })
