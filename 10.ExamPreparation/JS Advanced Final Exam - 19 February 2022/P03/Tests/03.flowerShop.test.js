@@ -32,11 +32,6 @@ describe("Tests …", function() {
             flowerShop.sellFlowers(undefined,false),
             "Invalid input!");
         });
-        // it("should remove the element at the space parameter", ()=> {
-        //     let flowers=['Daisy','Lilly','Poppy'];
-        // flowerShop.sellFlowers(flowers,1);
-        // assert.equal(flowers,['Daisy','Poppy']);
-        // });
         it("should print remaining flowers correctly", ()=> {
             assert.equal(flowerShop.sellFlowers(['Daisy','Lilly','Poppy'],1),
             "Daisy / Poppy");
